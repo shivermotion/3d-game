@@ -14,9 +14,9 @@ import { observer } from "mobx-react-lite"
 // =================================================================================================
 // ================================================================================================='
 import { AppLayout } from "@src/routing-app/app-layout/AppLayout"
-import { AppIndexScreen } from "@src/routing-app/app-screen-index/IndexScreen"
+import { StartScreen } from "@src/routing-app/app-screen-start/StartScreen"
 import { AppAboutScreen } from "@src/routing-app/app-screen-about/AboutScreen"
-import { AppContactScreen } from "@src/routing-app/app-screen-contact/ContactScreen"
+import { GameScreen } from "@src/routing-app/app-screen-game/GameScreen"
 
 
 // Application Navigator || Auth Imports
@@ -46,31 +46,14 @@ export const NavigationRoot = observer(() => {
 
   return (
     <div className="wrapper">
-      {!AuthStore.isAuthenticated ? (
-        <Routes>
-          <Route element={<AppLayout />}>
-            <Route index element={<AppIndexScreen />} />
-            <Route path="about" element={<AppAboutScreen />} />
-            <Route path="contact" element={<AppContactScreen />} />
-            <Route path={"/*"} element={<AppIndexScreen />} />
-          </Route>
-          <Route element={<AuthLayout />}>
-            <Route path="login" element={<AuthLoginScreen />} />
-            <Route path="logout" element={<AuthLogoutScreen />} />
-            <Route path="register" element={<AuthRegisterScreen />} />
-          </Route>
-        </Routes>
-      ) : (
-        <Routes>
-          <Route element={<PortalLayout />}>
-            <Route index element={<PortalDashboardScreen />} />
-            <Route path="profile" element={<PortalProfileScreen />} />
-            <Route path="settings" element={<PortalSettingsScreen />} />
-            <Route path="logout" element={<AuthLogoutScreen />} />
-            <Route path={"/*"} element={<PortalDashboardScreen />} />
-          </Route>
-        </Routes>
-      )}
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<StartScreen />} />
+          <Route path={"/*"} element={<StartScreen />} />
+          <Route path="/game" element={<GameScreen />} />
+        </Route>
+      </Routes>
+
     </div>
   )
 })

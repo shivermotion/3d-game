@@ -7,7 +7,7 @@ import * as Yup from "yup"
 // Application Screen || Define Imports
 // =================================================================================================
 // =================================================================================================
-import "./ContactScreen.scss"
+import "./GameScreen.scss"
 import colors from "@styles/colors.module.scss"
 import { sleep } from "@helpers/time"
 
@@ -15,7 +15,7 @@ import { sleep } from "@helpers/time"
 // Application Screen || Define Exports
 // =================================================================================================
 // =================================================================================================
-export const AppContactScreen = () => {
+export const GameScreen = () => {
   const getInitialValues = () => {
     return {
       name: "Tester",

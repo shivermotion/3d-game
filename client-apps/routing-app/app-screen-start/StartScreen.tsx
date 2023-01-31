@@ -1,25 +1,25 @@
 import React from "react"
-import { Typography } from "@mui/material"
+import { Button, Typography } from "@mui/material"
 
 
 // Application Screen || Define Imports
 // =================================================================================================
 // =================================================================================================
-import "./IndexScreen.scss"
+import "./StartScreen.scss"
+import { useNavigate } from "react-router-dom"
 
 
 // Application Screen || Define Exports
 // =================================================================================================
 // =================================================================================================
-export const AppIndexScreen = () => {
+export const StartScreen: React.FC = () => {
+  const navigate = useNavigate()
   return (
-    <div className="AppIndexScreen">
-      <Typography paragraph variant="h6">
-        Welcome to My Vite Template! 😎
-      </Typography>
-      <Typography paragraph>
-        Feel free to poke around the project because you are now inside a fully structured React application 🥳
-      </Typography>
+    <div id="home-screen">
+      <Typography variant="h3" className="game-title">My Game Title</Typography>
+      <Button variant="contained" color="primary" onClick={() => navigate("/game")}>START</Button>
+      <Typography variant="body2" style={{ marginTop: "auto" }}>Copyright Jason Day</Typography>
     </div>
   )
 }
+
