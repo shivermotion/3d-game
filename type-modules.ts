@@ -12,3 +12,4 @@ declare module "*.gif";
 declare module "*.svg";
 declare module "*.mov";
 declare module "*.mp4";
+
